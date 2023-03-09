@@ -75,6 +75,69 @@
   margin-right: var(---spacing-xs);
 }
 
+.mobileMenuBtn {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  width: var(--spacing-xl);
+  height: var(--spacing-xl);
+  justify-content: center;
+  align-items: center;
+}
+
+.menuSvg {
+  width: 0.875rem;
+  height: 0.875rem;
+  overflow: visible;
+  stroke: #334155;
+}
+
+.transition {
+  transition: 0.15s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.pathHide {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.modalBg {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(203, 213, 225, 0.5);
+  opacity: 1;
+}
+
+.mobileMenuLinks {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  transform-origin: top;
+  transform: scale(1);
+  border-radius: var(--spacing-m);
+  background-color: #fff;
+  padding: var(--spacing-m);
+
+  font-size: 1.125rem;
+  line-height: var(--spacing-xl);
+  letter-spacing: -0.025em;
+  color: rgb(15 23 42 / 1);
+  opacity: 1;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.mobileLink {
+  padding: var(--spacing-s);
+  width: 100%;
+  display: block;
+}
+
 @media screen and (min-width: 640px) {
   .headerContainer {
     padding: 0 var(--spacing-l);

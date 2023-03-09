@@ -44,48 +44,66 @@ const Navigation = () => {
               <Link to='register' className={styles.pillLink}>
                 <span>Register</span>
               </Link>
-            </div>
-            <div className={styles.mobileMenu}>
-              <button>
-                <svg
-                  aria-hidden='true'
-                  fill='none'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  onClick={() => dispatch(toogleMenu())}
-                >
-                  {!isMenuOpen && <path d='M0 1H14M0 7H14M0 13H14'></path>}
-                  <path
-                    d='M2 2L12 12M12 2L2 12'
-                    className='origin-center transition scale-90 opacity-0'
-                  ></path>
-                  {isMenuOpen && <path d='M2 2L12 12M12 2L2 12'></path>}
-                </svg>
-              </button>
-              {isMenuOpen && (
+              <div className={styles.mobileMenu}>
                 <div>
-                  <div aria-hidden='true'></div>
-                  <div>
-                    <a className='block w-full p-2' data-headlessui-state='open' href='/#features'>
-                      Features
-                    </a>
-                    <a className='block w-full p-2' data-headlessui-state='open' href='/#faq'>
-                      Frequently asked questions
-                    </a>
-                    <a
-                      className='block w-full p-2'
-                      data-headlessui-state='open'
-                      href='/userregister'
+                  <button className={styles.mobileMenuBtn}>
+                    <svg
+                      aria-hidden='true'
+                      fill='none'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      onClick={() => dispatch(toogleMenu())}
+                      className={styles.menuSvg}
                     >
-                      Get started
-                    </a>
-                    <hr className='m-2 border-slate-300/40' />
-                    <a className='block w-full p-2' data-headlessui-state='open' href='/login'>
-                      Sign in
-                    </a>
-                  </div>
+                      {!isMenuOpen ? (
+                        <>
+                          <path d='M0 1H14M0 7H14M0 13H14' className={styles.transition}></path>
+                          <path
+                            d='M2 2L12 12M12 2L2 12'
+                            className={styles.transition + ' ' + styles.pathHide}
+                          ></path>
+                        </>
+                      ) : (
+                        <>
+                          <path
+                            d='M0 1H14M0 7H14M0 13H14'
+                            className={styles.transition + ' ' + styles.pathHide}
+                          ></path>
+                          <path d='M2 2L12 12M12 2L2 12' className={styles.transition}></path>
+                        </>
+                      )}
+                    </svg>
+                  </button>
                 </div>
-              )}
+                {isMenuOpen && (
+                  <div>
+                    <div aria-hidden='true' className={styles.modalBg}></div>
+                    <ul className={styles.mobileMenuLinks}>
+                      <li>
+                        <Link className={styles.mobileLink} to={'/'}>
+                          Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className={styles.mobileLink} to={'/about'}>
+                          About
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className={styles.mobileLink} to={'/something'}>
+                          Something
+                        </Link>
+                      </li>
+                      <hr className='m-2 border-slate-300/40' />
+                      <li>
+                        <Link className={styles.mobileLink} to='/login'>
+                          Sign in
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </nav>
         </div>
