@@ -96,7 +96,7 @@ const Navigation = () => {
                       </li>
                       <hr className='m-2 border-slate-300/40' />
                       <li>
-                        <Link className={styles.mobileLink} to='/login'>
+                        <Link className={styles.mobileLink} to='/login' data-testid='mobileLink'>
                           Sign in
                         </Link>
                       </li>
