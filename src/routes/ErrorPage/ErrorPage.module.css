@@ -1,0 +1,75 @@
+.errorPage {
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  background-color: #fff;
+  padding: 6rem var(--spacing-l);
+}
+
+.container {
+  text-align: center;
+}
+
+.status {
+  font-size: var(--spacing-m);
+  line-height: var(--spacing-l);
+  font-weight: 600;
+  color: rgb(79, 70, 229);
+}
+
+.title {
+  margin-top: var(--spacing-m);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  font-size: 1.075rem;
+  line-height: 2.25rem;
+  color: rgb(17, 24, 39);
+}
+
+.describe {
+  margin-top: var(--spacing-l);
+  font-size: 1.75rem;
+  color: rgb(75, 85, 99);
+  line-height: 1.75rem;
+}
+
+.buttonContainer {
+  margin-top: var(--spacing-xxl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 0.375rem;
+  background-color: rgb(79, 70, 229);
+  padding: 0.625rem var(--default-font);
+  font-size: var(--default-font);
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: #fff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: rgb(99 102 241);
+}
+
+@media screen and (min-width: 640px) {
+  .errorPage {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .errorPage {
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+  }
+}
