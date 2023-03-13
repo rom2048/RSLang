@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <div className={styles.container}>
         <p className={styles.status}>404</p>
         <h1 className={styles.title}>Page not found</h1>
-        <p className={styles.describe}>Sorry, we couldn’t find the page you’re looking for.</p>
+        <p className={styles.describe}>Sorry, we couldn`t find the page you`re looking for.</p>
         <div className={styles.buttonContainer}>
           <button onClick={() => navigate(-1)} className={styles.button}>
             Go back
