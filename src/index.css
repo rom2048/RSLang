@@ -86,7 +86,6 @@ select {
 [type='reset'],
 [type='submit'],
 button {
-  -webkit-appearance: button;
   background-color: transparent;
   background-image: none;
 }
@@ -111,4 +110,15 @@ video {
 [type='radio']:checked:hover {
   border-color: transparent;
   background-color: currentColor;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
 }
