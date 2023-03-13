@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { toogleMenu, selectAppState } from '../../app/Navigation/Navigation'
 import styles from './Navigation.module.css'
+import Footer from '../Footer/Footer'
 
 const Navigation = () => {
   const { isMenuOpen } = useAppSelector(selectAppState)
@@ -20,17 +21,17 @@ const Navigation = () => {
               <ul className={styles.linksContainer}>
                 <li>
                   <NavLink to='/' className={styles.menuLink}>
-                    Home
+                    Главная
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to='/about' className={styles.menuLink}>
-                    About
+                    Игры
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to='/something' className={styles.menuLink}>
-                    Someting
+                    Статистика
                   </NavLink>
                 </li>
               </ul>
@@ -38,11 +39,11 @@ const Navigation = () => {
             <div className={styles.auth}>
               <div className={styles.signInContainer}>
                 <Link to='login' className={styles.menuLink}>
-                  Sign in
+                  Вход
                 </Link>
               </div>
               <Link to='register' className={styles.pillLink}>
-                <span>Register</span>
+                <span>Регистрация</span>
               </Link>
               <div className={styles.mobileMenu}>
                 <div>
@@ -81,23 +82,23 @@ const Navigation = () => {
                     <ul className={styles.mobileMenuLinks}>
                       <li>
                         <Link className={styles.mobileLink} to={'/'}>
-                          Home
+                          Главная
                         </Link>
                       </li>
                       <li>
                         <Link className={styles.mobileLink} to={'/about'}>
-                          About
+                          Игры
                         </Link>
                       </li>
                       <li>
                         <Link className={styles.mobileLink} to={'/something'}>
-                          Something
+                          Статистика
                         </Link>
                       </li>
                       <hr className='m-2 border-slate-300/40' />
                       <li>
                         <Link className={styles.mobileLink} to='/login' data-testid='mobileLink'>
-                          Sign in
+                          Вход
                         </Link>
                       </li>
                     </ul>
@@ -109,6 +110,7 @@ const Navigation = () => {
         </div>
       </header>
       <Outlet />
+      <Footer />
     </React.Fragment>
   )
 }
