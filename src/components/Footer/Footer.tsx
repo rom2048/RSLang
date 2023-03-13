@@ -16,17 +16,17 @@ const Footer = () => {
             <ul className={styles.linksContainer}>
               <li>
                 <Link to='/' className={styles.menuLink}>
-                  Home
+                  Главная
                 </Link>
               </li>
               <li>
                 <Link to='/about' className={styles.menuLink}>
-                  About
+                  Игры
                 </Link>
               </li>
               <li>
                 <Link to='/something' className={styles.menuLink}>
-                  Someting
+                  Статистика
                 </Link>
               </li>
             </ul>
