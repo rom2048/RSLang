@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import ErrorPage from './routes/ErrorPage/ErrorPage'
 import Home from './routes/Home/Home'
-import Navigation from './routes/Navigation/Navigation'
+import Navigation from './components/Navigation/Navigation'
 
 const App: React.FC = () => {
   return (
