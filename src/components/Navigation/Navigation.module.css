@@ -4,7 +4,7 @@
 
 .headerContainer {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: var(--container-width);
   padding: 0 var(--spacing-m);
 }
 
@@ -33,7 +33,7 @@
   display: inline-block;
   border-radius: var(--spacing-s);
   padding: var(--spacing-xs) var(--spacing-s);
-  font-size: 0.875rem;
+  font-size: var(--default-font);
   line-height: var(--spacing-m);
   color: rgb(51 65 85/1);
 }
@@ -61,7 +61,7 @@
   background-color: rgb(37 99 235/1);
   padding: var(--spacing-s) var(--spacing-m);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: var(--default-font);
   line-height: 1.5rem;
   color: rgb(255 255 255/1);
 }
@@ -86,8 +86,8 @@
 }
 
 .menuSvg {
-  width: 0.875rem;
-  height: 0.875rem;
+  width: var(--default-font);
+  height: var(--default-font);
   overflow: visible;
   stroke: #334155;
 }
