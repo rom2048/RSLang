@@ -8,7 +8,7 @@ const Hero = () => {
         RS Lang{' '}
         <span className={styles.highlight}>
           <HeroText className={styles.highlightSvg} />
-          <span className='relative'>веб приложение</span>
+          <span style={{ position: 'relative' }}>веб приложение</span>
         </span>{' '}
         для изучения Английского языка
       </h1>
