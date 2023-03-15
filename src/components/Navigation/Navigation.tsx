@@ -2,12 +2,12 @@ import React from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { toogleMenu, selectAppState } from '../../app/Navigation/Navigation'
+import { toogleMenu, selectNavigationState } from '../../app/Navigation/Navigation'
 import styles from './Navigation.module.css'
 import Footer from '../Footer/Footer'
 
 const Navigation = () => {
-  const { isMenuOpen } = useAppSelector(selectAppState)
+  const { isMenuOpen } = useAppSelector(selectNavigationState)
   const dispatch = useAppDispatch()
   return (
     <React.Fragment>

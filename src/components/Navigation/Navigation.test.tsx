@@ -20,7 +20,7 @@ test('Navigation mobile render', () => {
     </MemoryRouter>,
     {
       preloadedState: {
-        app: {
+        nav: {
           isMenuOpen: true,
         },
       },

@@ -13,8 +13,8 @@ const Section: FC<SectionProps> = ({ title, children }) => {
         <div className={styles.titleContainer}>
           <h2 className={styles.title}>{title}</h2>
         </div>
+        {children}
       </div>
-      {children}
     </section>
   )
 }

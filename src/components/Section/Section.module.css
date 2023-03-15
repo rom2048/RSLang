@@ -4,7 +4,7 @@
   padding-bottom: 5rem;
 }
 
-.continer {
+.container {
   margin: auto;
   max-width: var(--container-width);
   padding-left: var(--spacing-m);
