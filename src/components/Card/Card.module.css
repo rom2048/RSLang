@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  overflow: hidden;
+  border-radius: var(--spacing-s);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.imgContainer {
+  flex-shrink: 0;
+}
+
+.img {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardInfo {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: var(--spacing-l);
+}
+
+.cardLabelContainer {
+  flex: 1 1 0%;
+}
+
+.cardLabel {
+  text-align: left;
+  font-size: var(--default-font);
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: rgb(79, 70, 229);
+}
+
+.cardLabelText {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 9999px;
+  background-color: rgb(224 231 255);
+  padding: 0.125rem 0.75rem;
+  font-size: var(--default-font);
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: rgb(55, 48, 163);
+}
+
+.link {
+  display: block;
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+.linkText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+}
+
+.authorContainer {
+  margin-top: var(--spacing-l);
+  display: flex;
+  align-items: center;
+}
+
+.avatarContainer {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: var(--spacing-xxl);
+  height: var(--spacing-xxl);
+  border-radius: 9999px;
+}
+
+.authorDetails {
+  display: flex;
+  font-size: var(--default-font);
+  line-height: 1.25rem;
+  color: rgb(107, 114, 128);
+}
+
+.authorName {
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(17, 24, 39);
+}
+
+.authorName:hover {
+  text-decoration: underline;
+}
+
+.createdContainer {
+  display: flex;
+  font-size: var(--default-font);
+  line-height: 1.25rem;
+  color: rgb(107, 114, 128);
+}

@@ -1,8 +1,10 @@
 import { configureStore, PreloadedState, combineReducers } from '@reduxjs/toolkit'
-import appSliceReducer from './Navigation/Navigation'
+import navSliceReducer from './Navigation/Navigation'
+import wordsSliceReducer from './Words/Words'
 
 const rootReducer = combineReducers({
-  app: appSliceReducer,
+  nav: navSliceReducer,
+  words: wordsSliceReducer,
 })
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
@@ -14,7 +16,8 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
 
 export const store = configureStore({
   reducer: {
-    app: appSliceReducer,
+    nav: navSliceReducer,
+    words: wordsSliceReducer,
   },
 })
 

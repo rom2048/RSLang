@@ -1,0 +1,13 @@
+.cardList {
+  margin: 3rem auto 0 auto;
+  display: grid;
+  max-width: 32rem;
+  gap: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .cardList {
+    max-width: none;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

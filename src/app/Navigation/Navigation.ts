@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
-export type AppState = {
+export type NavigationState = {
   isMenuOpen: boolean
 }
 
-const initialState: AppState = {
+const initialState: NavigationState = {
   isMenuOpen: false,
 }
 
-export const appSlice = createSlice({
-  name: 'appSlice',
+export const navSlice = createSlice({
+  name: 'navSlice',
   initialState,
   reducers: {
     toogleMenu: (state) => {
@@ -19,8 +19,8 @@ export const appSlice = createSlice({
   },
 })
 
-export const selectAppState = (state: RootState) => state.app
+export const selectNavigationState = (state: RootState) => state.nav
 
-export const { toogleMenu } = appSlice.actions
+export const { toogleMenu } = navSlice.actions
 
-export default appSlice.reducer
+export default navSlice.reducer
