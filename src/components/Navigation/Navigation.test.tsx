@@ -19,11 +19,7 @@ test('Navigation mobile render', () => {
       <Navigation />
     </MemoryRouter>,
     {
-      preloadedState: {
-        nav: {
-          isMenuOpen: true,
-        },
-      },
+      preloadedState: {},
     },
   )
   const register = screen.getByTestId('mobileLink')

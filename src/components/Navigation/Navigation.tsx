@@ -1,14 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { toogleMenu, selectNavigationState } from '../../app/Navigation/Navigation'
 import styles from './Navigation.module.css'
 import Footer from '../Footer/Footer'
 
 const Navigation = () => {
-  const { isMenuOpen } = useAppSelector(selectNavigationState)
-  const dispatch = useAppDispatch()
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   return (
     <React.Fragment>
       <header className={styles.header}>
@@ -53,7 +50,7 @@ const Navigation = () => {
                       fill='none'
                       strokeWidth='2'
                       strokeLinecap='round'
-                      onClick={() => dispatch(toogleMenu())}
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
                       className={styles.menuSvg}
                     >
                       {!isMenuOpen ? (
