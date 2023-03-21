@@ -15,13 +15,10 @@ const initialState: WordsState = {
   // options: {},
 }
 
-export const getData = createAsyncThunk(
-  'words/fetchWords',
-  async (argOptions?: Record<string, string>) => {
-    const response = await getWords(argOptions)
-    return response.words
-  },
-)
+export const getData = createAsyncThunk('words/fetchWords', async () => {
+  const response = await getWords()
+  return response.words
+})
 
 export const wordsSlice = createSlice({
   name: 'words',

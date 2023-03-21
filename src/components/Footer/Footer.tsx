@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.menuContainer}>
           <Link to='/' className={styles.logoLink}>
-            <Logo className={styles.logo} />
+            <Logo className='ico' />
           </Link>
           <nav className={styles.navContainer} aria-label='quick links'>
             <ul className={styles.linksContainer}>
@@ -34,10 +34,10 @@ const Footer = () => {
         </div>
         <div className={styles.rssfooter}>
           <Link to='https://github.com/rom2048'>
-            <GitLogo className={styles.logo} />
+            <GitLogo className='ico' />
           </Link>
           <Link to='https://rs.school/'>
-            <RssLogo className={styles.logo} />
+            <RssLogo className='ico' />
           </Link>
 
           <p className='mt-6 text-sm text-slate-500 sm:mt-0'>© 2023</p>

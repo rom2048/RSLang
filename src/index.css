@@ -122,3 +122,8 @@ svg,
 video {
   display: block;
 }
+
+.ico {
+  width: auto;
+  height: var(--spacing-xxl);
+}

@@ -10,42 +10,56 @@
 }
 
 .img {
-  height: 12rem;
+  height: auto;
   width: 100%;
   object-fit: cover;
 }
 
 .cardInfo {
   flex: 1 1 0%;
-  display: flex;
   justify-content: space-between;
   background: #fff;
-  padding: var(--spacing-l);
+  padding: var(--spacing-m);
 }
 
-.cardLabelContainer {
-  flex: 1 1 0%;
+.cardInfoContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
-.cardLabel {
-  text-align: left;
-  font-size: var(--default-font);
-  line-height: 1.25rem;
-  font-weight: 500;
-  color: rgb(79, 70, 229);
-}
-
-.cardLabelText {
-  display: inline-flex;
-  cursor: pointer;
+.cardWordContainer {
+  display: flex;
   align-items: center;
-  border-radius: 9999px;
-  background-color: rgb(224 231 255);
-  padding: 0.125rem 0.75rem;
-  font-size: var(--default-font);
-  line-height: 1.25rem;
+  column-gap: var(--spacing-s);
+}
+
+.cardWord {
+  text-align: left;
+  font-size: var(--spacing-xl);
+  line-height: var(--spacing-xxl);
   font-weight: 500;
-  color: rgb(55, 48, 163);
+  color: rgb(70, 99, 229);
+  text-transform: capitalize;
+}
+
+.textContainer {
+  margin-top: var(--spacing-s);
+}
+
+.textWrapper {
+  margin-top: var(--spacing-s);
+}
+
+.textExample {
+  line-height: var(--spacing-l);
+  font-size: 1.25rem;
+}
+
+.translate {
+  margin-top: 0.25rem;
+  font-size: var(--default-font);
+  line-height: var(--spacing-l);
+  color: rgb(71 85 105);
 }
 
 .link {
@@ -64,7 +78,7 @@
 .authorContainer {
   margin-top: var(--spacing-l);
   display: flex;
-  align-items: center;
+  column-gap: var(--spacing-m);
 }
 
 .avatarContainer {

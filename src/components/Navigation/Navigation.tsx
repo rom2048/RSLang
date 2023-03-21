@@ -13,7 +13,7 @@ const Navigation = () => {
           <nav className={styles.navContainer}>
             <div className={styles.logoContainer}>
               <Link to='/'>
-                <Logo className={styles.logo} />
+                <Logo className='ico' />
               </Link>
               <ul className={styles.linksContainer}>
                 <li>

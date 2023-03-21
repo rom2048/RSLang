@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { Word } from '../../types'
+import { ReactComponent as AudioIcon } from '../../assets/audio.svg'
 import styles from './Card.module.css'
+import Button from '../Button/Button'
 
 type CardProps = {
   item: Word
@@ -17,31 +19,44 @@ const Card: FC<CardProps> = ({ item }) => {
         />
       </div>
       <div className={styles.cardInfo}>
-        <div className={styles.cardLabelContainer}>
-          <p className={styles.cardLabel}>
-            <span className={styles.cardLabelText}>Article</span>
-          </p>
-          <a href='#' className={styles.link}>
-            <p className={styles.linkText}> Boost your conversion rate</p>
-          </a>
+        <div className={styles.cardInfoContainer}>
+          <div className={styles.cardWordContainer}>
+            <h3 className={styles.cardWord}>{item.word}</h3>
+            {'-'}
+            <span>{item.transcription}</span>
+            {'-'}
+            <span>{item.wordTranslate}</span>
+          </div>
+          <AudioIcon
+            className='ico'
+            onClick={() => {
+              console.log('play/stop')
+            }}
+          />
+        </div>
+        <div className={styles.textContainer}>
+          <div className={styles.textWrapper}>
+            <p
+              className={styles.textExample}
+              dangerouslySetInnerHTML={{ __html: item.textExample }}
+            ></p>
+            <p className={styles.translate}>{item.textExampleTranslate}</p>
+          </div>
+          <div className={styles.textWrapper}>
+            <p
+              className={styles.textExample}
+              dangerouslySetInnerHTML={{ __html: item.textMeaning }}
+            ></p>
+            <p className={styles.translate}>{item.textMeaningTranslate}</p>
+          </div>
         </div>
         <div className={styles.authorContainer}>
-          <div className={styles.avatarContainer}>
-            <img
-              className={styles.avatar}
-              src='https://avatars.githubusercontent.com/u/73503432?v=4'
-              alt=''
-            />
-          </div>
-          <div className={styles.authorDetails}>
-            <span className={styles.authorName}>Jabed</span>
-            <div className={styles.authorDetails}>
-              <time dateTime='2020-03-16'>11 Jul, 2022</time>
-              <span aria-hidden='true'>·</span>
-              <span> 6 min read</span>
-            </div>
-          </div>
+          <Button text='Сложное' />
+          <Button text='Удалить' background='rgb(15, 23, 42)' />
         </div>
+        <audio src={'http://localhost:3000/' + item.audio}></audio>
+        <audio src={'http://localhost:3000/' + item.audioExample}></audio>
+        <audio src={'http://localhost:3000/' + item.audioMeaning}></audio>
       </div>
     </div>
   )
