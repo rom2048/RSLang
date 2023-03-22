@@ -6,6 +6,7 @@ import { useAppSelector, useAppDispatch } from '../../app/hooks'
 
 import { getData, selectWords } from '../../app/Words/Words'
 import { useEffect } from 'react'
+import Advantage from '../../components/Advantage/Advantage'
 
 const Home = () => {
   const { loading, words } = useAppSelector(selectWords)
@@ -18,10 +19,13 @@ const Home = () => {
   return (
     <main>
       <Hero />
-      <Section title='Card List'>
+      <Section title='Преимущества'>
+        <Advantage />
+      </Section>
+      <Section title='Список слов'>
         <CardList />
       </Section>
-      <Section title='About'>
+      <Section title='О нас'>
         <About />
       </Section>
     </main>

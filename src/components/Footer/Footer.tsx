@@ -40,7 +40,7 @@ const Footer = () => {
             <RssLogo className='ico' />
           </Link>
 
-          <p className='mt-6 text-sm text-slate-500 sm:mt-0'>© 2023</p>
+          <p>© 2023</p>
         </div>
       </div>
     </footer>
