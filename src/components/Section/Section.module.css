@@ -2,6 +2,8 @@
   background-color: rgb(248 250 252);
   padding-top: 5rem;
   padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
@@ -9,6 +11,7 @@
   max-width: var(--container-width);
   padding-left: var(--spacing-m);
   padding-right: var(--spacing-m);
+  position: relative;
 }
 
 .titleContainer {
@@ -21,6 +24,15 @@
   line-height: var(--spacing-xxl);
   letter-spacing: -0.025em;
   color: rgb(15 23 42);
+}
+
+.bgImg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  max-width: none;
+  color: transparent;
+  transform: translate(-30%, -25%);
 }
 
 @media screen and (min-width: 640px) {
