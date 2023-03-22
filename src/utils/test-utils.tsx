@@ -5,9 +5,9 @@ import { configureStore } from '@reduxjs/toolkit'
 import type { PreloadedState } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 
-import type { AppStore, RootState } from '../app/store'
+import type { AppStore, RootState } from '../store/store'
 // As a basic setup, import your same slice reducers
-import wordsSliceReducer from '../app/Words/Words'
+import wordsSliceReducer from '../routes/Words/Words'
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>

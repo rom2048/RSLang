@@ -1,7 +1,7 @@
 import Card from '../Card/Card'
 import styles from './CardList.module.css'
-import { useAppSelector } from '../../app/hooks'
-import { selectWords } from '../../app/Words/Words'
+import { useAppSelector } from '../../store/hooks'
+import { selectWords } from '../../routes/Words/Words'
 
 const CardList = () => {
   const { words } = useAppSelector(selectWords)

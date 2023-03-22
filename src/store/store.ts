@@ -1,5 +1,5 @@
 import { configureStore, PreloadedState, combineReducers } from '@reduxjs/toolkit'
-import wordsSliceReducer from './Words/Words'
+import wordsSliceReducer from '../routes/Words/Words'
 
 const rootReducer = combineReducers({
   words: wordsSliceReducer,

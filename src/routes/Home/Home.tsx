@@ -2,9 +2,9 @@ import About from '../../components/About/About'
 import CardList from '../../components/CardList/CardList'
 import Hero from '../../components/Hero/Hero'
 import Section from '../../components/Section/Section'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
 
-import { getData, selectWords } from '../../app/Words/Words'
+import { getData, selectWords } from '../Words/Words'
 import { useEffect } from 'react'
 import Advantage from '../../components/Advantage/Advantage'
 
