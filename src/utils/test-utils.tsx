@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import type { AppStore, RootState } from '../store/store'
 // As a basic setup, import your same slice reducers
 import wordsSliceReducer from '../routes/Words/Words'
+import userReducer from '../routes/User/User'
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>
@@ -20,7 +21,7 @@ export function renderWithProviders(
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
     store = configureStore({
-      reducer: { words: wordsSliceReducer },
+      reducer: { words: wordsSliceReducer, user: userReducer },
       preloadedState,
     }),
     ...renderOptions
