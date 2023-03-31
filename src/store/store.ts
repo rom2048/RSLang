@@ -1,10 +1,11 @@
 import { configureStore, PreloadedState, combineReducers } from '@reduxjs/toolkit'
-import wordsSliceReducer from '../routes/Words/Words'
-import userReducer from '../routes/User/User'
 
+import wordsSliceReducer from '../routes/Words/Words'
+import authReducer from '../features/auth/authSlice'
+import { apiSlice } from '../features/api/apiSlice'
 const rootReducer = combineReducers({
   words: wordsSliceReducer,
-  user: userReducer,
+  auth: authReducer,
 })
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
@@ -16,9 +17,12 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
 
 export const store = configureStore({
   reducer: {
+    [apiSlice.reducerPath]: apiSlice.reducer,
     words: wordsSliceReducer,
-    user: userReducer,
+    auth: authReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  devTools: true,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

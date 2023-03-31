@@ -14,8 +14,8 @@ const App: React.FC = () => {
         <Route index element={<Home />} />
         {/* <Route element={<Words />} /> */}
       </Route>
-      <Route path='/login' element={<SignIn />} />
-      <Route path='/register' element={<SignUp />} />
+      <Route path='/signin' element={<SignIn />} />
+      <Route path='/signup' element={<SignUp />} />
       <Route path='*' element={<ErrorPage />} />
     </Routes>
   )

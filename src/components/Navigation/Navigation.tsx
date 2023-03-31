@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import styles from './Navigation.module.css'
 import Footer from '../Footer/Footer'
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
+import { selectCurrentUser, logOut } from '../../features/auth/authSlice'
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const auth = useAppSelector(selectCurrentUser)
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const logOff = () => {
+    dispatch(logOut())
+    navigate('/')
+  }
   return (
     <React.Fragment>
       <header className={styles.header}>
@@ -34,14 +43,30 @@ const Navigation = () => {
               </ul>
             </div>
             <div className={styles.auth}>
-              <div className={styles.signInContainer}>
-                <Link to='login' className={styles.menuLink}>
-                  Вход
-                </Link>
-              </div>
-              <Link to='register' className={styles.pillLink}>
-                <span>Регистрация</span>
-              </Link>
+              {!auth?.userId ? (
+                <>
+                  <div className={styles.signInContainer}>
+                    <Link to='/signin' className={styles.menuLink}>
+                      Вход
+                    </Link>
+                  </div>
+                  <Link to='/signup' className={styles.pillLink}>
+                    <span>Регистрация</span>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div className={styles.signInContainer}>
+                    <p onClick={logOff} className={styles.menuLink}>
+                      Выход
+                    </p>
+                  </div>
+                  <Link to='/profile' className={styles.pillLink}>
+                    <span>Профиль</span>
+                  </Link>
+                </>
+              )}
+
               <div className={styles.mobileMenu}>
                 <div>
                   <button className={styles.mobileMenuBtn}>
@@ -93,11 +118,17 @@ const Navigation = () => {
                         </Link>
                       </li>
                       <hr className='m-2 border-slate-300/40' />
-                      <li>
-                        <Link className={styles.mobileLink} to='/login' data-testid='mobileLink'>
-                          Вход
-                        </Link>
-                      </li>
+                      {!auth?.userId ? (
+                        <li>
+                          <Link className={styles.mobileLink} to='/signin' data-testid='mobileLink'>
+                            Вход
+                          </Link>
+                        </li>
+                      ) : (
+                        <p onClick={logOff} className={styles.mobileLink}>
+                          Выход
+                        </p>
+                      )}
                     </ul>
                   </div>
                 )}

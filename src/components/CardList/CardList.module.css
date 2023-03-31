@@ -3,11 +3,17 @@
   display: grid;
   max-width: 32rem;
   gap: 1.25rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 @media screen and (min-width: 1024px) {
   .cardList {
     max-width: none;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .cardList {
+    flex-direction: column;
   }
 }
