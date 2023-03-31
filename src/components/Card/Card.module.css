@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: var(--spacing-s);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -113,4 +114,10 @@
   font-size: var(--default-font);
   line-height: 1.25rem;
   color: rgb(107, 114, 128);
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex-direction: row;
+  }
 }

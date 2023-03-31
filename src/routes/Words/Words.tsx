@@ -5,7 +5,7 @@ import { Word } from '../../types'
 
 export type WordsState = {
   loading: boolean
-  words: Word[]
+  words: Word[] | null
   // options: CharacterFilter
 }
 
@@ -17,7 +17,7 @@ const initialState: WordsState = {
 
 export const getData = createAsyncThunk('words/fetchWords', async () => {
   const response = await getWords()
-  return response.words
+  return response
 })
 
 export const wordsSlice = createSlice({
@@ -29,7 +29,7 @@ export const wordsSlice = createSlice({
       .addCase(getData.pending, (state) => {
         state.loading = true
       })
-      .addCase(getData.fulfilled, (state, action: PayloadAction<Word[]>) => {
+      .addCase(getData.fulfilled, (state, action: PayloadAction<Word[] | null>) => {
         state.loading = false
         state.words = action.payload
       })
@@ -41,7 +41,5 @@ export const wordsSlice = createSlice({
 })
 
 export const selectWords = (state: RootState) => state.words
-
-// export const { setOptions } = appDataSlice.actions
 
 export default wordsSlice.reducer

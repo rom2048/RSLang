@@ -8,9 +8,7 @@ const CardList = () => {
 
   return (
     <div className={styles.cardList}>
-      {words.map((word) => (
-        <Card item={word} key={word.id} />
-      ))}
+      {words && words.map((word) => <Card item={word} key={word.id} />)}
     </div>
   )
 }
