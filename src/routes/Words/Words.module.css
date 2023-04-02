@@ -1,4 +1,4 @@
-.cardList {
+.wordList {
   margin: 3rem auto 0 auto;
   display: grid;
   max-width: 32rem;
@@ -7,13 +7,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .cardList {
+  .wordList {
     max-width: none;
   }
 }
 
 @media screen and (min-width: 450px) {
-  .cardList {
+  .wordList {
     flex-direction: column;
   }
 }

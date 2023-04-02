@@ -1,9 +1,10 @@
+import { User } from '../../types'
 import { apiSlice } from '../api/apiSlice'
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     signIn: builder.mutation({
-      query: (credentials) => ({
+      query: (credentials: User) => ({
         url: '/signin',
         method: 'POST',
         headers: {
@@ -14,7 +15,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     users: builder.mutation({
-      query: (credentials) => ({
+      query: (credentials: User) => ({
         url: '/users',
         method: 'POST',
         headers: {

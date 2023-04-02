@@ -5,10 +5,10 @@ const Hero = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        RS Lang{' '}
+        Веб приложение{' '}
         <span className={styles.highlight}>
           <HeroText className={styles.highlightSvg} />
-          <span style={{ position: 'relative' }}>веб приложение</span>
+          <span style={{ position: 'relative' }}>RS Lang</span>
         </span>{' '}
         для изучения Английского языка
       </h1>
