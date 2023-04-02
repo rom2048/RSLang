@@ -2,6 +2,8 @@ import { FC } from 'react'
 import { Word } from '../../types'
 import { ReactComponent as AudioIcon } from '../../assets/audio.svg'
 import styles from './Card.module.css'
+import { useAppSelector } from '../../store/hooks'
+import { selectCurrentUser } from '../../features/auth/authSlice'
 import Button from '../Button/Button'
 
 type CardProps = {
@@ -9,6 +11,8 @@ type CardProps = {
 }
 
 const Card: FC<CardProps> = ({ item }) => {
+  const auth = useAppSelector(selectCurrentUser)
+
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
@@ -50,10 +54,12 @@ const Card: FC<CardProps> = ({ item }) => {
             <p className={styles.translate}>{item.textMeaningTranslate}</p>
           </div>
         </div>
-        <div className={styles.authorContainer}>
-          <Button text='Сложное' />
-          <Button text='Удалить' background='rgb(15, 23, 42)' />
-        </div>
+        {!auth?.userId ? (
+          <div className={styles.authorContainer}>
+            <Button text='Сложное' />
+            <Button text='Удалить' background='rgb(15, 23, 42)' />
+          </div>
+        ) : null}
         <audio src={'http://localhost:3000/' + item.audio}></audio>
         <audio src={'http://localhost:3000/' + item.audioExample}></audio>
         <audio src={'http://localhost:3000/' + item.audioMeaning}></audio>

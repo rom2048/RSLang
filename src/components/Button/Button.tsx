@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode } from 'react'
+import { FC } from 'react'
 import styles from './Button.module.css'
 
 interface ButtonProps {

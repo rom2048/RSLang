@@ -83,6 +83,7 @@
   height: var(--spacing-xl);
   justify-content: center;
   align-items: center;
+  background: unset;
 }
 
 .menuSvg {

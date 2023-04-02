@@ -36,8 +36,8 @@ const Navigation = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/something' className={styles.menuLink}>
-                    Статистика
+                  <NavLink to='/words' className={styles.menuLink}>
+                    Список слов
                   </NavLink>
                 </li>
               </ul>
@@ -100,7 +100,11 @@ const Navigation = () => {
                 </div>
                 {isMenuOpen && (
                   <div>
-                    <div aria-hidden='true' className={styles.modalBg}></div>
+                    <div
+                      aria-hidden='true'
+                      className={styles.modalBg}
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    ></div>
                     <ul className={styles.mobileMenuLinks}>
                       <li>
                         <Link className={styles.mobileLink} to={'/'}>
@@ -113,8 +117,8 @@ const Navigation = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link className={styles.mobileLink} to={'/something'}>
-                          Статистика
+                        <Link className={styles.mobileLink} to={'/words'}>
+                          Список слов
                         </Link>
                       </li>
                       <hr className='m-2 border-slate-300/40' />
