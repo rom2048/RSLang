@@ -54,7 +54,7 @@ const Card: FC<CardProps> = ({ item }) => {
             <p className={styles.translate}>{item.textMeaningTranslate}</p>
           </div>
         </div>
-        {!auth?.userId ? (
+        {auth?.userId ? (
           <div className={styles.authorContainer}>
             <Button text='Сложное' />
             <Button text='Удалить' background='rgb(15, 23, 42)' />
