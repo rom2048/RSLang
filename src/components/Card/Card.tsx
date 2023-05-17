@@ -1,20 +1,25 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import { Word } from '../../types'
 import { ReactComponent as AudioIcon } from '../../assets/audio.svg'
 import styles from './Card.module.css'
 import { useAppSelector } from '../../store/hooks'
 import { selectCurrentUser } from '../../features/auth/authSlice'
 import Button from '../Button/Button'
+import { selectGroupColors } from '../../features/words/wordsSlice'
 
 type CardProps = {
   item: Word
 }
 
 const Card: FC<CardProps> = ({ item }) => {
+  const refAudioWord = useRef<HTMLAudioElement>(null)
+  const refAudioMeaning = useRef<HTMLAudioElement>(null)
+  const refAudioExample = useRef<HTMLAudioElement>(null)
   const auth = useAppSelector(selectCurrentUser)
+  const colors = useAppSelector(selectGroupColors)
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ background: colors[item.group] }}>
       <div className={styles.imgContainer}>
         <img
           className={styles.img}
@@ -34,7 +39,21 @@ const Card: FC<CardProps> = ({ item }) => {
           <AudioIcon
             className='ico'
             onClick={() => {
-              console.log('play/stop')
+              if (refAudioWord.current) {
+                refAudioWord.current.currentTime = 0
+                refAudioWord.current.play()
+                refAudioWord.current.onended = () => {
+                  if (refAudioMeaning.current) refAudioMeaning.current.currentTime = 0
+                  refAudioMeaning.current && refAudioMeaning.current.play()
+
+                  if (refAudioMeaning.current) {
+                    refAudioMeaning.current.onended = () => {
+                      if (refAudioExample.current) refAudioExample.current.currentTime = 0
+                      refAudioExample.current && refAudioExample.current.play()
+                    }
+                  }
+                }
+              }
             }}
           />
         </div>
@@ -42,16 +61,16 @@ const Card: FC<CardProps> = ({ item }) => {
           <div className={styles.textWrapper}>
             <p
               className={styles.textExample}
-              dangerouslySetInnerHTML={{ __html: item.textExample }}
+              dangerouslySetInnerHTML={{ __html: item.textMeaning }}
             ></p>
-            <p className={styles.translate}>{item.textExampleTranslate}</p>
+            <p className={styles.translate}>{item.textMeaningTranslate}</p>
           </div>
           <div className={styles.textWrapper}>
             <p
               className={styles.textExample}
-              dangerouslySetInnerHTML={{ __html: item.textMeaning }}
+              dangerouslySetInnerHTML={{ __html: item.textExample }}
             ></p>
-            <p className={styles.translate}>{item.textMeaningTranslate}</p>
+            <p className={styles.translate}>{item.textExampleTranslate}</p>
           </div>
         </div>
         {auth?.userId ? (
@@ -60,9 +79,9 @@ const Card: FC<CardProps> = ({ item }) => {
             <Button text='Удалить' background='rgb(15, 23, 42)' />
           </div>
         ) : null}
-        <audio src={'http://localhost:3000/' + item.audio}></audio>
-        <audio src={'http://localhost:3000/' + item.audioExample}></audio>
-        <audio src={'http://localhost:3000/' + item.audioMeaning}></audio>
+        <audio ref={refAudioWord} src={'http://localhost:3000/' + item.audio}></audio>
+        <audio ref={refAudioMeaning} src={'http://localhost:3000/' + item.audioMeaning}></audio>
+        <audio ref={refAudioExample} src={'http://localhost:3000/' + item.audioExample}></audio>
       </div>
     </div>
   )

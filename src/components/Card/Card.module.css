@@ -19,7 +19,6 @@
 .cardInfo {
   flex: 1 1 0%;
   justify-content: space-between;
-  background: #fff;
   padding: var(--spacing-m);
 }
 

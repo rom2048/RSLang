@@ -2,7 +2,7 @@ import Card from '../../components/Card/Card'
 import Section from '../../components/Section/Section'
 import { useGetWordsQuery } from '../../features/words/wordsApiSlice'
 import { useAppSelector } from '../../store/hooks'
-import { selectGroup, selectPage } from '../../features/words/wordsSlice'
+import { selectGroup, selectPage, selectGroupColors } from '../../features/words/wordsSlice'
 import { Word } from '../../types'
 
 import styles from './Words.module.css'
